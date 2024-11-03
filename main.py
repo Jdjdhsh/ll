@@ -145,7 +145,7 @@ class XProxy:
 class ProxyScrape(XProxy):
     def _scrape(self, url, custom_regex):
         try:
-            proxylist = requests.get(url, timeout=5, headers=self.headers).text
+            proxylist = requests.get(url, timeout=1, headers=self.headers).text
             custom_regex = custom_regex.replace('%ip%', '([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})')
             custom_regex = custom_regex.replace('%port%', '([0-9]{1,5})')
 
